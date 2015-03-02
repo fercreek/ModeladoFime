@@ -10,9 +10,9 @@ def linealAlgorithm(a, x0, cte, N ):
         r.append("%.3f" % (float(tempValue)/(N-1)))
         x0 = tempValue
     for value in range(len(lifeSpan)):
-        print "lifeSpan", lifeSpan[value], "r(x8)", r[value]
+        print "lifeSpan", lifeSpan[value], "r(x)", r[value]
 
-def calculateValues(g, k ): #g,k
+def calculateValues(g, k ):
     N = pow(2,g)
     a = 1 + 4*k
     return N,a
