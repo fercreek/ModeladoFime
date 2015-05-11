@@ -23,7 +23,6 @@ def printTable(lifeSpan, r, a, x0, cte, N):
     xRepeat = x0
     for iter in range(len(lifeSpan)):
         print "x_{0} = ({1}*{2}+{3})mod({4}) = {5}, r_{0} = {6}".format(iter+1, a, xRepeat,cte, N, lifeSpan[iter],  r[iter])
-        # print "lifeSpan", lifeSpan[iter], "r(x)", r[iter]
         xRepeat = lifeSpan[iter]
 def main():
     g = int(sys.argv[1])
