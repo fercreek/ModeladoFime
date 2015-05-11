@@ -10,8 +10,7 @@ def linealAlgorithm(a, x0, cte, N):
         lifeSpan.append(tempValue)
         r.append("%.3f" % (float(tempValue) / (N - 1)))
         x0 = tempValue
-    for value in range(len(lifeSpan)):
-        print "lifeSpan", lifeSpan[value], "r(x)", r[value]
+    return lifeSpan, r
 
 
 def calculateValues(g, k):
@@ -19,7 +18,13 @@ def calculateValues(g, k):
     a = 1 + 4 * k
     return N, a
 
-
+def printTable(lifeSpan, r, a, x0, cte, N):
+    print "x_0 = ", x0
+    xRepeat = x0
+    for iter in range(len(lifeSpan)):
+        print "x_{0} = ({1}*{2}+{3})mod({4}) = {5}, r_{0} = {6}".format(iter+1, a, xRepeat,cte, N, lifeSpan[iter],  r[iter])
+        # print "lifeSpan", lifeSpan[iter], "r(x)", r[iter]
+        xRepeat = lifeSpan[iter]
 def main():
     g = int(sys.argv[1])
     k = int(sys.argv[2])
@@ -29,7 +34,8 @@ def main():
     N = int(N)
     a = int(a)
 
-    linealAlgorithm(a, x0, cte, N)
+    lifeSpan, r = linealAlgorithm(a, x0, cte, N)
+    printTable(lifeSpan, r, a, x0, cte, N)
 
 if __name__ == "__main__":
     main()

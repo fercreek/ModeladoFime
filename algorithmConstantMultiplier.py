@@ -28,7 +28,6 @@ def changeValues(cte, xTemp):
 def printTable(yList, xList, cte):
     for iter in range(len(yList)):
         print "y_{0} = {1} * {2} = {3}, X_{4} = {5}, r_{4} = {6}".format(iter, cte, xList[iter], yList[iter], iter+1, xList[iter+1], float(xList[iter+1])/10000 )
-        # print xList
 
 def main():
     x0 = int(sys.argv[1])
